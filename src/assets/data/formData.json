@@ -1,0 +1,162 @@
+{
+    "data": [
+       
+        {
+            "ID":0,
+            "Type":"this is a quiz contest.",
+            "Title":"quizes 1",
+            "IsDeleted":false,
+            "IsAnonymous":false,
+            "Question":[
+                {
+                    "ID":0,
+                    "Type":"Single choice",
+                    "Text":"what is your age?",
+                    "options":[
+                        {
+                            "ID":0,
+                            "OptionText":"18-20",
+                            "OptionColor":"",
+                            "hasRemarks":false
+                        },
+                        {
+                            "ID":0,
+                            "OptionText":"20-24",
+                            "OptionColor":"",
+                            "hasRemarks":false
+                        }
+                        ],
+                        "Required":false,
+                        "Remarks":"",
+                        "hasRemarks":false
+                        },
+                        {
+                            "ID":0,
+                            "Type":"Multi choice",
+                            "Text":"what is your hobby?",
+                            "options":[
+                                {
+                                    "ID":0,
+                                    "OptionText":"Dance",
+                                    "OptionColor":"",
+                                    "hasRemarks":false
+                                },
+                                {
+                                    "ID":0,
+                                    "OptionText":"Sing",
+                                    "OptionColor":"",
+                                    "hasRemarks":false
+                                }
+                                ],
+                                "Required":false,
+                                "Remarks":"",
+                                "hasRemarks":false
+                                },
+                                {
+                                    "ID":0,
+                                    "Type":"Text",
+                                    "Text":"Write you name",
+                                    
+                                    "Required":false,
+                                    "Remarks":"",
+                                    "hasRemarks":false
+                                }
+                ]
+        },
+        {
+            "ID":0,
+            "Type":"this is a quiz contest.",
+            "Title":"quizes 1",
+            "IsDeleted":false,
+            "IsAnonymous":false,
+            "Question":[
+                {
+                    "ID":0,
+                    "Type":"Single choice",
+                    "Text":"what is your age?",
+                    "options":[
+                        {
+                            "ID":0,
+                            "OptionText":"18-20",
+                            "OptionColor":"",
+                            "hasRemarks":false
+                        },
+                        {
+                            "ID":0,
+                            "OptionText":"20-24",
+                            "OptionColor":"",
+                            "hasRemarks":false
+                        }
+                        ],
+                        "Required":false,
+                        "Remarks":"",
+                        "hasRemarks":false
+                        }
+                ]
+        },
+        {
+            "ID":0,
+            "Type":"this is a quiz contest.",
+            "Title":"quizes 1",
+            "IsDeleted":false,
+            "IsAnonymous":false,
+            "Question":[
+                {
+                    "ID":0,
+                    "Type":"Single choice",
+                    "Text":"what is your age?",
+                    "options":[
+                        {
+                            "ID":0,
+                            "OptionText":"18-20",
+                            "OptionColor":"",
+                            "hasRemarks":false
+                        },
+                        {
+                            "ID":0,
+                            "OptionText":"20-24",
+                            "OptionColor":"",
+                            "hasRemarks":false
+                        }
+                        ],
+                        "Required":false,
+                        "Remarks":"",
+                        "hasRemarks":false
+                        }
+                ]
+        },
+        {
+            "ID":0,
+            "Type":"this is a quiz contest.",
+            "Title":"quizes 1",
+            "IsDeleted":false,
+            "IsAnonymous":false,
+            "Question":[
+                {
+                    "ID":0,
+                    "Type":"Single choice",
+                    "Text":"what is your age?",
+                    "options":[
+                        {
+                            "ID":0,
+                            "OptionText":"18-20",
+                            "OptionColor":"",
+                            "hasRemarks":false
+                        },
+                        {
+                            "ID":0,
+                            "OptionText":"20-24",
+                            "OptionColor":"",
+                            "hasRemarks":false
+                        }
+                        ],
+                        "Required":false,
+                        "Remarks":"",
+                        "hasRemarks":false
+                        }
+                ]
+        }
+    
+    ]
+  }  
+  
