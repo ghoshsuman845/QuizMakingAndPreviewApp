@@ -23,6 +23,7 @@ export class PreviewSurveyComponent implements OnInit {
     let surveyTitle = '';
     let surveyType = '';
     let surveyQuestions = new FormArray([]);
+    let options = new FormArray([]);
 
     this.survey = new FormGroup({
       'surveyTitle': new FormControl(surveyTitle, [Validators.required]),
@@ -36,17 +37,17 @@ export class PreviewSurveyComponent implements OnInit {
 
   ngOnInit() {
     this.initForm();
-    this.api.getQuizData().subscribe(data => {
-      console.log(data),
-      this.quiz = data;
-      console.log(this.quiz);
+    this.api.getQuizData().subscribe(res => {
+      console.log(res),
+      this.quiz = res.data;
+      console.log(this.quiz)
       
       const quizArray = Object.keys(this.quiz).map(i => this.quiz[i])
       console.log({quizArray});
       
      
       
-      this.question =  data[0].Question;
+      this.question =  res.data[0].Question;
       console.log(this.question);
       console.log(this.question.length);
       
