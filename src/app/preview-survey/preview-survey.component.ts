@@ -11,7 +11,7 @@ import { ApiService } from '../services/api.service';
 })
 export class PreviewSurveyComponent implements OnInit {
   quiz: any[] = [];
-  survey: FormGroup;
+  getsurveyForm: FormGroup;
   formdetails: any;
   type: any;
   question: any;
@@ -19,21 +19,7 @@ export class PreviewSurveyComponent implements OnInit {
  i:number;
   index: any;
   constructor(private api: ApiService) { }
-  private initForm() {
-    let surveyTitle = '';
-    let surveyType = '';
-    let surveyQuestions = new FormArray([]);
-    let options = new FormArray([]);
-
-    this.survey = new FormGroup({
-      'surveyTitle': new FormControl(surveyTitle, [Validators.required]),
-      'surveyType': new FormControl(surveyType, [Validators.required]),
-      'surveyQuestions': surveyQuestions,
-      'IsAnonymous': new FormControl(false, [Validators.required])
-    });
-
-
-  }
+ 
 
   ngOnInit() {
     this.initForm();
@@ -42,11 +28,8 @@ export class PreviewSurveyComponent implements OnInit {
       this.quiz = res.data;
       console.log(this.quiz)
       
-      const quizArray = Object.keys(this.quiz).map(i => this.quiz[i])
-      console.log({quizArray});
-      
-     
-      
+      // const quizArray = Object.keys(this.quiz).map(i => this.quiz[i])
+      // console.log({quizArray});
       this.question =  res.data[0].Question;
       console.log(this.question);
       console.log(this.question.length);
@@ -61,6 +44,21 @@ export class PreviewSurveyComponent implements OnInit {
       
     })
        
+  }
+  private initForm() {
+    let surveyTitle = '';
+    let surveyType = '';
+    let surveyQuestions = new FormArray([]);
+    let options = new FormArray([]);
+
+    this.getsurveyForm = new FormGroup({
+      'surveyTitle': new FormControl(surveyTitle, [Validators.required]),
+      'surveyType': new FormControl(surveyType, [Validators.required]),
+      'surveyQuestions': surveyQuestions,
+      'IsAnonymous': new FormControl(false, [Validators.required])
+    });
+
+
   }
   onSubmit(){
 

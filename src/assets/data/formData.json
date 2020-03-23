@@ -3,8 +3,8 @@
        
         {
             "ID":0,
-            "Type":"this is a quiz contest.",
-            "Title":"quizes 1",
+            "Type":"This task is a selection task.You need to complete all the questions.Each question contains 1 marks.",
+            "Title":"Selection Test",
             "IsDeleted":false,
             "IsAnonymous":false,
             "Question":[
@@ -62,100 +62,8 @@
                                     "hasRemarks":false
                                 }
                 ]
-        },
-        {
-            "ID":0,
-            "Type":"this is a quiz contest.",
-            "Title":"quizes 1",
-            "IsDeleted":false,
-            "IsAnonymous":false,
-            "Question":[
-                {
-                    "ID":0,
-                    "Type":"Single choice",
-                    "Text":"what is your age?",
-                    "options":[
-                        {
-                            "ID":0,
-                            "OptionText":"18-20",
-                            "OptionColor":"",
-                            "hasRemarks":false
-                        },
-                        {
-                            "ID":0,
-                            "OptionText":"20-24",
-                            "OptionColor":"",
-                            "hasRemarks":false
-                        }
-                        ],
-                        "Required":false,
-                        "Remarks":"",
-                        "hasRemarks":false
-                        }
-                ]
-        },
-        {
-            "ID":0,
-            "Type":"this is a quiz contest.",
-            "Title":"quizes 1",
-            "IsDeleted":false,
-            "IsAnonymous":false,
-            "Question":[
-                {
-                    "ID":0,
-                    "Type":"Single choice",
-                    "Text":"what is your age?",
-                    "options":[
-                        {
-                            "ID":0,
-                            "OptionText":"18-20",
-                            "OptionColor":"",
-                            "hasRemarks":false
-                        },
-                        {
-                            "ID":0,
-                            "OptionText":"20-24",
-                            "OptionColor":"",
-                            "hasRemarks":false
-                        }
-                        ],
-                        "Required":false,
-                        "Remarks":"",
-                        "hasRemarks":false
-                        }
-                ]
-        },
-        {
-            "ID":0,
-            "Type":"this is a quiz contest.",
-            "Title":"quizes 1",
-            "IsDeleted":false,
-            "IsAnonymous":false,
-            "Question":[
-                {
-                    "ID":0,
-                    "Type":"Single choice",
-                    "Text":"what is your age?",
-                    "options":[
-                        {
-                            "ID":0,
-                            "OptionText":"18-20",
-                            "OptionColor":"",
-                            "hasRemarks":false
-                        },
-                        {
-                            "ID":0,
-                            "OptionText":"20-24",
-                            "OptionColor":"",
-                            "hasRemarks":false
-                        }
-                        ],
-                        "Required":false,
-                        "Remarks":"",
-                        "hasRemarks":false
-                        }
-                ]
         }
+      
     
     ]
   }  

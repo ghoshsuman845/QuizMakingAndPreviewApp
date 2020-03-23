@@ -9,6 +9,6 @@ export class ApiService {
   constructor(private http: HttpClient) { }
   
   getQuizData(): Observable<any>{
-    return this.http.get('http://localhost:3000/data')
+    return this.http.get('assets/data/formData.json')
   }
 }

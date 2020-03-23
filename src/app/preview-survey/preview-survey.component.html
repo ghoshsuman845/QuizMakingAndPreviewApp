@@ -1,150 +1,55 @@
-<mat-card>
+<div *ngFor= "let arr of quiz ; let i = index">
+    <mat-toolbar >
+        <span  class="fill-remaining-space">{{arr.Title}}</span>
+    </mat-toolbar>
+    <mat-card>{{arr.Type}}</mat-card>
 
-    <form [formGroup]="survey" novalidate (ngSubmit)="onSubmit(survey)">
-        <!-- <mat-form-field class="full-width">
-            <mat-label>{{quiz.Title}}</mat-label>
-            <input formControlName="surveyTitle" matInput placeholder="Enter Title" maxlength="50" [required]="true">
-        </mat-form-field> -->
-
-        <!-- <mat-form-field  class="full-width">
-            <mat-label>{{quizArray[2]}}</mat-label>
-            <mat-label>{{quizArray[1]}}</mat-label>
-
-            
-        </mat-form-field> -->
-        <mat-slide-toggle formControlName="IsAnonymous" class="mb-10">Make survey anonymous </mat-slide-toggle>
-
+    
+    <form [formGroup]="getsurveyForm" (ngSubmit)="onSubmit(getsurveyForm.value)" autocomplete="off">
         <div class="survey-options">
-
             <div formArrayName="surveyQuestions" class="poll-options">
-                <!-- <h3 class="list-title">Add Survey Questions </h3> -->
 
-
-                <ol class="list-style">
-                    <li *ngFor="let questionCtrl of question; let i = index">
-                        <div [formGroupName]="i">
-                            <div>
-                                <mat-form-field class="full-width">
-                                    {{questionCtrl[i]}}
-                                    <!-- <input formControlName="questionTitle" maxlength="200" matInput
-                                        placeholder="Question title" [required]="true"> -->
-                                </mat-form-field>
-                                <mat-form-field class="full-width">
-                                   
-                                </mat-form-field>
-
-                                <div formGroupName="questionGroup" [ngSwitch]="question[i].Type">
-                                    <div *ngSwitchCase="'Single choice'">
-                                        <div *ngIf="questionCtrl.controls.questionGroup.controls.options">
-                                            <ul class="question-type" formArrayName="options">
-                                                <li
-                                                    *ngFor="let optionCtrl of questionCtrl.controls.questionGroup.controls.options.controls let j = index">
-                                                    <div [formGroupName]="j">
-
-                                                        <mat-form-field>
-                                                            <mat-radio-group aria-label="Select an option">
-                                                                <mat-radio-button value="1">Option 1</mat-radio-button>
-                                                            </mat-radio-group>
-                                                            <input formControlName="optionText" matInput
-                                                                placeholder="option text" maxlength="100"
-                                                                [required]="true">
-                                                        </mat-form-field>
-
-                                                        <button *ngIf="j>=2" (click)="removeOption(i,j)" color="warn">X
-
-                                                        </button>
-
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <button mat-raised-button type="button" (click)="addOption(i)"
-                                                class="mat-sm-button add-option-btn" color="accent"> Add option</button>
-                                        </div>
-                                        <div *ngIf="questionCtrl.controls.questionGroup.controls.showRemarksBox">
-                                            <mat-slide-toggle formControlName="showRemarksBox">
-                                                Show Remarks Textarea
-                                            </mat-slide-toggle>
-                                            <mat-form-field class="full-width">
-                                                <textarea style="resize: none;" disabled matInput
-                                                    placeholder="Textarea"></textarea>
-                                            </mat-form-field>
-                                        </div>
-
-                                    </div>
-                                    <div *ngSwitchCase="'Multi choice'">
-                                        <div *ngIf="questionCtrl.controls.questionGroup.controls.options">
-                                            <ul class="question-type" formArrayName="options">
-                                                <li
-                                                    *ngFor="let optionCtrl of questionCtrl.controls.questionGroup.controls.options.controls let j = index">
-                                                    <div [formGroupName]="j">
-
-                                                        <mat-form-field>
-                                                            <input formControlName="optionText" matInput
-                                                                placeholder="option text" maxlength="100"
-                                                                [required]="true">
-                                                        </mat-form-field>
-
-                                                        <button mat-raised-button *ngIf="j>=2"
-                                                            (click)="removeOption(i,j)" color="warn">
-                                                            X
-                                                        </button>
-
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <button mat-raised-button type="button" (click)="addOption(i)"
-                                                class="mat-sm-button add-option-btn" color="accent"> Add option</button>
-                                        </div>
-                                        <div *ngIf="questionCtrl.controls.questionGroup.controls.showRemarksBox">
-                                            <mat-slide-toggle formControlName="showRemarksBox">
-                                                Show Remarks Textarea
-                                            </mat-slide-toggle>
-                                            <mat-form-field class="full-width">
-                                                <textarea style="resize: none;" matInput
-                                                    placeholder="Correct Answer"></textarea>
-                                            </mat-form-field>
-                                        </div>
-                                    </div>
-                                    <div *ngSwitchCase="'Text'">
-
-                                        <mat-form-field class="full-width">
-                                            <textarea style="resize: none;" disabled matInput
-                                                placeholder="Textarea"></textarea>
-                                        </mat-form-field>
-
-                                    </div>
-                                    <div *ngSwitchCase="'Rating'">
-                                        Stars Selected
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <button *ngIf="i>0" mat-mini-fab color="warn" type="button" (click)="onRemoveQuestion(i)"
-                                class="poll-remove-btn">
-                                X
-                            </button>
-                        </div>
-                    </li>
-                </ol>
-                <div fxLayout="row" fxLayoutAlign="end">
-                    <button type="button" mat-raised-button (click)="onAddQuestion()">
-                        Add Question
-                    </button>
-                </div>
-            </div>
-
-        </div>
-
-
-        <div class="button-row">
-            <button class="full-width" color="primary" type="submit" mat-raised-button [disabled]="!survey.valid">
-
-
-                <span *ngIf="!editMode">Submit</span>
-                <span *ngIf="editMode">Update Survey</span>
-            </button>
+        <ol class="list-style" *ngFor = "let ques of question ; let i = index" [ngSwitch]="ques.Type">
             
+                <li *ngSwitchCase="'Single choice'" >
+                    <label id="example-radio-group-label">{{ques.Text}}</label>
+                    <mat-radio-group
+                    aria-labelledby="example-radio-group-label"
+                    class="example-radio-group">
+                    <mat-radio-button class="example-radio-button"  *ngFor = "let opt of ques.options" [value]="opt.OptionText">
+                        {{opt.OptionText}}
+                    </mat-radio-button>
+                    </mat-radio-group>
+
+
+            </li>
+            
+            <li *ngSwitchCase="'Multi choice'" >
+                <label for="questionText">{{ques.Text}}</label>
+                
+                <section class="example-section" *ngFor = "let opt of ques.options">
+                    <mat-checkbox class="example-margin" >{{opt.OptionText}}</mat-checkbox>
+                </section>
+            </li>
+            <li *ngSwitchCase="'Text'" >
+                <mat-label>{{ques.Text}}</mat-label>
+                <form class="example-form">
+                    
+                    <mat-form-field class="full-width">
+
+                      <textarea  matInput placeholder="Give an answer"></textarea>
+                    </mat-form-field>
+                  </form>
+                
+                
+            </li>
+        </ol>
         </div>
-    </form>
-</mat-card>
+        <div class="form-element">
+            <button class="full-width" mat-raised-button color="primary" type="submit"  [disabled]="!getsurveyForm.valid">Submit Form</button>
+        </div>
+    </div>    
+    </form>   
+
+
+</div>
